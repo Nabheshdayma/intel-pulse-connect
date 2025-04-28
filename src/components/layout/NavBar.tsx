@@ -26,19 +26,23 @@ const NavBar = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-center space-x-4">
-              <NavLink href="#services">Services</NavLink>
-              <NavLink href="#about">About Us</NavLink>
-              <NavLink href="#contact">Contact</NavLink>
+              <NavLink href="/">Home</NavLink>
+              <NavLink href="/portfolio">Portfolio</NavLink>
+              <NavLink href="/about">About</NavLink>
+              <NavLink href="/contact">Contact</NavLink>
               
               <div className="relative group">
                 <button className="flex items-center gap-1 text-foreground/90 hover:text-foreground px-3 py-2 rounded-md text-sm font-medium">
-                  Resources <ChevronDown className="h-4 w-4" />
+                  Services <ChevronDown className="h-4 w-4" />
                 </button>
-                <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-background border border-border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                <div className="absolute left-0 mt-2 w-64 rounded-md shadow-lg bg-background border border-border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
                   <div className="py-1">
-                    <Link to="/blog" className="block px-4 py-2 text-sm hover:bg-accent/10">Blog</Link>
-                    <Link to="/docs" className="block px-4 py-2 text-sm hover:bg-accent/10">Documentation</Link>
-                    <Link to="/support" className="block px-4 py-2 text-sm hover:bg-accent/10">Support</Link>
+                    <Link to="/services/civ" className="block px-4 py-2 text-sm hover:bg-accent/10">Continuous Intelligent Validation</Link>
+                    <Link to="/services/ctm" className="block px-4 py-2 text-sm hover:bg-accent/10">Continuous Temperature Mapping</Link>
+                    <Link to="/services/cpdm" className="block px-4 py-2 text-sm hover:bg-accent/10">Continuous Predictive Maintenance</Link>
+                    <Link to="/services/cems" className="block px-4 py-2 text-sm hover:bg-accent/10">Continuous Environmental Monitoring</Link>
+                    <Link to="/services/calm" className="block px-4 py-2 text-sm hover:bg-accent/10">Continuous Application Lifecycle Management</Link>
+                    <Link to="/services/cdm" className="block px-4 py-2 text-sm hover:bg-accent/10">Continuous Document Management</Link>
                   </div>
                 </div>
               </div>
@@ -50,7 +54,7 @@ const NavBar = () => {
               <Link to="/login" className="hover-lift">Login</Link>
             </Button>
             <Button asChild>
-              <Link to="/login" className="hover-lift">Get Started</Link>
+              <Link to="/contact" className="hover-lift">Get in touch</Link>
             </Button>
           </div>
 
@@ -76,12 +80,14 @@ const NavBar = () => {
       {isOpen && (
         <div className="md:hidden animate-fade-in">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-background border-t border-border">
-            <MobileNavLink href="#services">Services</MobileNavLink>
-            <MobileNavLink href="#about">About Us</MobileNavLink>
-            <MobileNavLink href="#contact">Contact</MobileNavLink>
-            <MobileNavLink href="/blog">Blog</MobileNavLink>
-            <MobileNavLink href="/docs">Documentation</MobileNavLink>
-            <MobileNavLink href="/support">Support</MobileNavLink>
+            <MobileNavLink href="/">Home</MobileNavLink>
+            <MobileNavLink href="/portfolio">Portfolio</MobileNavLink>
+            <MobileNavLink href="/about">About</MobileNavLink>
+            <MobileNavLink href="/contact">Contact</MobileNavLink>
+            <MobileNavLink href="/services">Services</MobileNavLink>
+            <MobileNavLink href="/services/civ">- Continuous Intelligent Validation</MobileNavLink>
+            <MobileNavLink href="/services/ctm">- Continuous Temperature Mapping</MobileNavLink>
+            <MobileNavLink href="/services/cpdm">- Continuous Predictive Maintenance</MobileNavLink>
           </div>
           <div className="pt-4 pb-3 border-t border-border">
             <div className="flex items-center px-5 space-x-2">
@@ -89,7 +95,7 @@ const NavBar = () => {
                 <Link to="/login">Login</Link>
               </Button>
               <Button asChild className="w-full">
-                <Link to="/login">Get Started</Link>
+                <Link to="/contact">Get in touch</Link>
               </Button>
             </div>
           </div>

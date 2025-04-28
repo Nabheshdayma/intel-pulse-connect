@@ -24,26 +24,26 @@ const Hero = () => {
             <div className="flex items-center gap-2">
               <Brain className="w-5 h-5 text-brand-purple animate-pulse" />
               <span className="inline-block py-1 px-3 rounded-full text-sm font-medium bg-primary/10 text-primary">
-                Next-Gen AI Intelligence Platform
+                AI Driven GxP Manufacturing
               </span>
             </div>
             <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
-              Elevate Your <span className="text-gradient bg-gradient-to-r from-brand-purple via-brand-neon to-brand-magenta">Business Decisions</span> with AI
+              Streamline Your <span className="text-gradient bg-gradient-to-r from-brand-purple via-brand-neon to-brand-magenta">GxP Processes</span> Using AI
             </h1>
             <p className="text-lg text-muted-foreground max-w-xl">
-              Continuous Intelligence delivers real-time insights and predictive analytics to transform your data into strategic business advantages.
+              From predictive analytics to automated software validation, our AI solutions intelligently simplify and amplify your operations.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button size="lg" asChild className="group">
-                <Link to="/login">
-                  Get Started
+                <Link to="/contact">
+                  Discover Now
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
               <Button size="lg" variant="outline" asChild>
-                <a href="#services">
-                  Explore Services
-                </a>
+                <Link to="/contact">
+                  Request a demo
+                </Link>
               </Button>
             </div>
           </div>
@@ -66,10 +66,10 @@ const Hero = () => {
 
         {/* Stats */}
         <div className={`mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 ${isVisible ? 'animate-fade-in animation-delay-500' : 'opacity-0'}`}>
-          <StatItem value="98%" label="Customer Satisfaction" />
-          <StatItem value="$2.4M" label="Average ROI" />
-          <StatItem value="15x" label="Faster Insights" />
-          <StatItem value="1000+" label="Global Clients" />
+          <StatItem value="100%" label="GxP Compliant" />
+          <StatItem value="85%" label="Cost Reduction" />
+          <StatItem value="10x" label="Faster Validation" />
+          <StatItem value="500+" label="Life Sciences Clients" />
         </div>
       </div>
     </section>

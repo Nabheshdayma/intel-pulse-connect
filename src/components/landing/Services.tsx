@@ -1,6 +1,9 @@
 
 import { useRef, useEffect, useState } from "react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Link } from "react-router-dom";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
+import { ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const Services = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -29,16 +32,17 @@ const Services = () => {
   return (
     <section id="services" ref={sectionRef} className="py-20 bg-secondary/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-12">
           <span className="inline-block py-1 px-3 rounded-full text-sm font-medium bg-primary/10 text-primary">
-            Our Services
+            AI-powered GxP Services
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold mt-4">
-            Intelligent Solutions for Modern Businesses
+            Our Services
           </h2>
-          <p className="mt-4 text-muted-foreground">
-            Our AI-powered platform provides comprehensive insights and tools to help your business thrive in the digital age.
-          </p>
+          <div className="mt-4 flex justify-center gap-4">
+            <Link to="/services" className="text-sm font-medium text-primary hover:underline">view all</Link>
+            <Link to="/contact" className="text-sm font-medium text-primary hover:underline">get in touch</Link>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -76,52 +80,50 @@ const ServiceCard = ({ icon, title, description, isVisible, delay }: ServiceCard
           <span className="text-2xl">{icon}</span>
         </div>
         <CardTitle>{title}</CardTitle>
-        <CardDescription>{description}</CardDescription>
+        <CardDescription className="text-base">{description}</CardDescription>
       </CardHeader>
-      <CardContent>
-        <ul className="space-y-2">
-          {Array(3).fill(0).map((_, i) => (
-            <li key={i} className="flex items-center text-sm">
-              <span className="mr-2 text-primary">✓</span>
-              <span className="text-muted-foreground">Feature {i + 1}</span>
-            </li>
-          ))}
-        </ul>
-      </CardContent>
+      <CardFooter>
+        <Button variant="link" asChild className="pl-0 group">
+          <Link to="/services">
+            Learn More
+            <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
+          </Link>
+        </Button>
+      </CardFooter>
     </Card>
   );
 };
 
 const services = [
   {
-    icon: "🔍",
-    title: "AI Analytics",
-    description: "Advanced analytics powered by artificial intelligence to uncover hidden insights in your data."
+    icon: "🧪",
+    title: "Continuous Intelligent Validation (cIV)",
+    description: "cIV simplifies and automates GxP-compliant software validation with cutting-edge AI."
   },
   {
-    icon: "🤖",
-    title: "Process Automation",
-    description: "Streamline operations with intelligent automation that adapts to your business needs."
+    icon: "🌡️",
+    title: "Continuous Temperature Mapping (cTM)",
+    description: "cTM monitors and analyzes environmental parameters in real-time - an innovative AI/ML powered app."
+  },
+  {
+    icon: "⚙️",
+    title: "Continuous Predictive Maintenance (cPdM)",
+    description: "cPdM transforms preventive maintenance with AI/ML driven Predictive Maintenance."
+  },
+  {
+    icon: "🔍",
+    title: "Continuous Environmental Monitoring System (cEMS)",
+    description: "Continuous Environmental Monitoring System is an innovative platform set to transform environmental data analysis."
   },
   {
     icon: "📊",
-    title: "Predictive Intelligence",
-    description: "Forecast market trends and customer behavior with our predictive modeling."
+    title: "Continuous Application Lifecycle Management (cALM)",
+    description: "cALM is an innovative platform transforming software validation, qualification, and application lifecycle management for life sciences."
   },
   {
-    icon: "🛡️",
-    title: "Security Intelligence",
-    description: "Proactively identify and mitigate security risks with AI-powered threat detection."
-  },
-  {
-    icon: "💬",
-    title: "Customer Experience AI",
-    description: "Enhance customer satisfaction with personalized experiences and intelligent support."
-  },
-  {
-    icon: "🚀",
-    title: "Decision Acceleration",
-    description: "Rapid data processing for faster, more informed business decisions."
+    icon: "📄",
+    title: "Continuous Document Management (cDM)",
+    description: "Equipped with cutting-edge AI technology, cDM is a premier Document Management solution tailored for life sciences organizations."
   }
 ];
 

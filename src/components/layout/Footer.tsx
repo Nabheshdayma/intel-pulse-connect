@@ -11,7 +11,7 @@ const Footer = () => {
               Continuous Intelligence
             </Link>
             <p className="text-muted-foreground text-sm">
-              Empowering businesses with AI-driven insights and intelligent automation solutions.
+              Defining AI driven GxP Manufacturing
             </p>
             <div className="flex space-x-4">
               <SocialIcon href="#" label="Twitter" />
@@ -22,33 +22,44 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="font-semibold mb-4">Solutions</h3>
-            <ul className="space-y-2">
-              <FooterLink href="#services">AI Analytics</FooterLink>
-              <FooterLink href="#services">Process Automation</FooterLink>
-              <FooterLink href="#services">Intelligent Monitoring</FooterLink>
-              <FooterLink href="#services">Predictive Insights</FooterLink>
-            </ul>
-          </div>
-
-          <div>
             <h3 className="font-semibold mb-4">Company</h3>
             <ul className="space-y-2">
-              <FooterLink href="#about">About Us</FooterLink>
-              <FooterLink href="#team">Our Team</FooterLink>
-              <FooterLink href="/careers">Careers</FooterLink>
-              <FooterLink href="#contact">Contact Us</FooterLink>
+              <FooterLink href="/">Home</FooterLink>
+              <FooterLink href="/about">About</FooterLink>
+              <FooterLink href="/services">Services</FooterLink>
+              <FooterLink href="/success-stories">Success Stories</FooterLink>
+              <FooterLink href="/partners">Partners</FooterLink>
+              <FooterLink href="/events">Events</FooterLink>
+              <FooterLink href="/trust-center">Trust Center</FooterLink>
+              <FooterLink href="/blog">Our Blogs</FooterLink>
+              <FooterLink href="/tv">ContinuousTV</FooterLink>
             </ul>
           </div>
 
           <div>
-            <h3 className="font-semibold mb-4">Resources</h3>
+            <h3 className="font-semibold mb-4">Services</h3>
             <ul className="space-y-2">
-              <FooterLink href="/blog">Blog</FooterLink>
-              <FooterLink href="/docs">Documentation</FooterLink>
-              <FooterLink href="/support">Support Center</FooterLink>
-              <FooterLink href="/status">System Status</FooterLink>
+              <FooterLink href="/services/civ">Continuous Intelligent Validation (cIV)</FooterLink>
+              <FooterLink href="/services/ctm">Continuous Temperature Mapping (cTM)</FooterLink>
+              <FooterLink href="/services/cpdm">Continuous Predictive Maintenance (cPdM)</FooterLink>
+              <FooterLink href="/services/cems">Continuous Environmental Monitoring System (cEMS)</FooterLink>
+              <FooterLink href="/services/calm">Continuous Application Lifecycle Management (cALM)</FooterLink>
+              <FooterLink href="/services">View all services</FooterLink>
             </ul>
+          </div>
+
+          <div>
+            <h3 className="font-semibold mb-4">Contact Us</h3>
+            <div className="mb-4">
+              <input 
+                type="email" 
+                placeholder="Please enter your email address" 
+                className="w-full px-4 py-2 rounded-md bg-secondary border border-border focus:outline-none focus:ring-2 focus:ring-primary"
+              />
+            </div>
+            <button className="bg-primary text-primary-foreground px-4 py-2 rounded-md w-full hover:bg-primary/90 transition-colors">
+              Contact Us
+            </button>
           </div>
         </div>
 
@@ -57,9 +68,8 @@ const Footer = () => {
             &copy; {new Date().getFullYear()} Continuous Intelligence. All rights reserved.
           </p>
           <div className="flex space-x-8 mt-4 md:mt-0">
-            <FooterLink href="/terms">Terms</FooterLink>
-            <FooterLink href="/privacy">Privacy</FooterLink>
-            <FooterLink href="/cookies">Cookies</FooterLink>
+            <FooterLink href="/privacy">Privacy Policy</FooterLink>
+            <FooterLink href="/terms">Terms and Conditions</FooterLink>
           </div>
         </div>
       </div>
