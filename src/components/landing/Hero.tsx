@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Brain, Cpu } from "lucide-react";
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -14,20 +14,21 @@ const Hero = () => {
 
   return (
     <section className="relative overflow-hidden bg-background py-20 md:py-32">
-      {/* Background gradient */}
+      {/* Background elements */}
       <div className="absolute inset-0 bg-gradient-radial from-brand-purple/10 to-transparent" />
-      
-      {/* Animated background elements */}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-blue via-brand-magenta to-brand-purple animated-gradient" />
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-neon via-brand-magenta to-brand-purple animated-gradient" />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className={`space-y-6 ${isVisible ? 'animate-slide-up' : 'opacity-0'}`}>
-            <span className="inline-block py-1 px-3 rounded-full text-sm font-medium bg-primary/10 text-primary">
-              Next-Gen Customer Intelligence Platform
-            </span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
-              Elevate Your <span className="text-gradient">Business Decisions</span> with AI
+            <div className="flex items-center gap-2">
+              <Brain className="w-5 h-5 text-brand-purple animate-pulse" />
+              <span className="inline-block py-1 px-3 rounded-full text-sm font-medium bg-primary/10 text-primary">
+                Next-Gen AI Intelligence Platform
+              </span>
+            </div>
+            <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
+              Elevate Your <span className="text-gradient bg-gradient-to-r from-brand-purple via-brand-neon to-brand-magenta">Business Decisions</span> with AI
             </h1>
             <p className="text-lg text-muted-foreground max-w-xl">
               Continuous Intelligence delivers real-time insights and predictive analytics to transform your data into strategic business advantages.
