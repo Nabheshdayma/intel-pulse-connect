@@ -83,6 +83,18 @@
   }
 }
 
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
 @layer utilities {
   .glass-card {
     @apply bg-white/80 backdrop-blur-sm border border-white/20 shadow-md;
@@ -103,6 +115,10 @@
   
   .hover-scale {
     @apply transition-transform duration-300 hover:scale-105;
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
   }
 }
 

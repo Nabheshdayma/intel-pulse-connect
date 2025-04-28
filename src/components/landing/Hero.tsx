@@ -1,86 +1,74 @@
 
-import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Brain, Cpu } from "lucide-react";
+import { Brain } from "lucide-react";
 
 const Hero = () => {
-  const [isVisible, setIsVisible] = useState(false);
-
-  // Animation trigger
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
-
   return (
-    <section className="relative overflow-hidden bg-background py-20 md:py-32">
-      {/* Background elements */}
-      <div className="absolute inset-0 bg-gradient-radial from-brand-purple/10 to-transparent" />
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-neon via-brand-magenta to-brand-purple animated-gradient" />
+    <section className="relative min-h-screen bg-[#1A1F2C] overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-brand-purple/10 via-transparent to-transparent" />
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 lg:pt-40 pb-20 lg:pb-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className={`space-y-6 ${isVisible ? 'animate-slide-up' : 'opacity-0'}`}>
-            <div className="flex items-center gap-2">
-              <Brain className="w-5 h-5 text-brand-purple animate-pulse" />
-              <span className="inline-block py-1 px-3 rounded-full text-sm font-medium bg-primary/10 text-primary">
-                AI Driven GxP Manufacturing
-              </span>
+          <div className="space-y-8">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-purple/10 border border-brand-purple/20">
+              <Brain className="w-4 h-4 text-brand-purple" />
+              <span className="text-sm text-brand-purple">AI Driven GxP Manufacturing</span>
             </div>
-            <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
-              Streamline Your <span className="text-gradient bg-gradient-to-r from-brand-purple via-brand-neon to-brand-magenta">GxP Processes</span> Using AI
+            
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white">
+              Keep a good thing{" "}
+              <span className="text-gradient bg-gradient-to-r from-brand-purple via-brand-neon to-brand-magenta">
+                growing
+              </span>
             </h1>
-            <p className="text-lg text-muted-foreground max-w-xl">
-              From predictive analytics to automated software validation, our AI solutions intelligently simplify and amplify your operations.
+            
+            <p className="text-lg text-gray-300 max-w-xl">
+              From predictive analytics to automated software validation, our AI solutions intelligently simplify and amplify your GxP operations.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button size="lg" asChild className="group">
-                <Link to="/contact">
-                  Discover Now
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Link>
+
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button 
+                size="lg" 
+                className="bg-brand-purple hover:bg-brand-purple/90 text-white"
+                asChild
+              >
+                <Link to="/contact">Book my demo</Link>
               </Button>
-              <Button size="lg" variant="outline" asChild>
-                <Link to="/contact">
-                  Request a demo
-                </Link>
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-gray-600 text-white hover:bg-white/5"
+                asChild
+              >
+                <Link to="/services">Start now</Link>
               </Button>
             </div>
           </div>
 
-          <div className={`${isVisible ? 'animate-slide-up animation-delay-300' : 'opacity-0'} flex justify-center`}>
-            <div className="relative">
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-brand-blue to-brand-magenta rounded-2xl blur opacity-30 animate-pulse-slow"></div>
-              <div className="relative bg-card border border-border rounded-2xl shadow-xl overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1740&q=80"
-                  alt="AI Analytics Dashboard"
-                  className="w-full h-full object-cover rounded-xl"
-                  width={500}
-                  height={380}
-                />
-              </div>
+          <div className="relative lg:flex hidden justify-end">
+            <div className="w-full max-w-lg">
+              <img
+                src="/lovable-uploads/b5772adf-02fc-4a04-a5ce-7a8aa38ffcc9.png"
+                alt="Dashboard Preview"
+                className="w-full h-auto rounded-lg shadow-2xl animate-float"
+              />
             </div>
           </div>
         </div>
 
-        {/* Stats */}
-        <div className={`mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 ${isVisible ? 'animate-fade-in animation-delay-500' : 'opacity-0'}`}>
-          <StatItem value="100%" label="GxP Compliant" />
-          <StatItem value="85%" label="Cost Reduction" />
-          <StatItem value="10x" label="Faster Validation" />
-          <StatItem value="500+" label="Life Sciences Clients" />
+        <div className="mt-20 pt-10 border-t border-gray-800">
+          <div className="grid grid-cols-3 md:grid-cols-6 gap-8 items-center opacity-60">
+            {['Time', 'Sprout Social', 'Fish & Fun', 'Paramount+', 'Kahoot!', 'Sling'].map((brand) => (
+              <div key={brand} className="text-center text-gray-400 text-sm font-medium">
+                {brand}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
   );
 };
-
-const StatItem = ({ value, label }: { value: string; label: string }) => (
-  <div className="text-center hover-lift">
-    <div className="text-3xl font-bold text-gradient">{value}</div>
-    <div className="text-sm text-muted-foreground mt-1">{label}</div>
-  </div>
-);
 
 export default Hero;

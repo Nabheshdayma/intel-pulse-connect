@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -12,7 +11,7 @@ const NavBar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-background/80 backdrop-blur-md z-50 border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 bg-[#1A1F2C]/80 backdrop-blur-md z-50 border-b border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
@@ -23,7 +22,6 @@ const NavBar = () => {
             </Link>
           </div>
 
-          {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-center space-x-4">
               <NavLink href="/">Home</NavLink>
@@ -50,15 +48,14 @@ const NavBar = () => {
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="ghost" asChild>
-              <Link to="/login" className="hover-lift">Login</Link>
+            <Button variant="ghost" className="text-gray-300 hover:text-white" asChild>
+              <Link to="/login">Login</Link>
             </Button>
-            <Button asChild>
-              <Link to="/contact" className="hover-lift">Get in touch</Link>
+            <Button className="bg-brand-purple hover:bg-brand-purple/90" asChild>
+              <Link to="/contact">Book my demo</Link>
             </Button>
           </div>
 
-          {/* Mobile menu button */}
           <div className="md:hidden">
             <button
               onClick={toggleMenu}
@@ -76,7 +73,6 @@ const NavBar = () => {
         </div>
       </div>
 
-      {/* Mobile menu, show/hide based on menu state */}
       {isOpen && (
         <div className="md:hidden animate-fade-in">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-background border-t border-border">
