@@ -21,16 +21,28 @@ const CallToAction = () => {
             Our AI-powered solutions are designed to streamline your GxP processes,
             reduce costs, and improve compliance across your organization.
           </p>
-          <Button 
-            size="lg" 
-            asChild
-            className="rounded-full bg-white text-secondary hover:bg-white/90 font-medium px-8 group"
-          >
-            <Link to="/contact">
-              Contact Us 
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button 
+              size="lg" 
+              asChild
+              className="rounded-full bg-white text-secondary hover:bg-white/90 font-medium px-8"
+            >
+              <Link to="/contact">
+                Get Started Now
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+            <Button 
+              size="lg" 
+              variant="outline"
+              asChild
+              className="rounded-full border-white text-white hover:bg-white/10"
+            >
+              <Link to="/contact">
+                Contact Us
+              </Link>
+            </Button>
+          </div>
         </div>
       </div>
     </section>

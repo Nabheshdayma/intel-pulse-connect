@@ -27,7 +27,7 @@ const NavBar = () => {
     <nav 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-white/90 backdrop-blur-sm shadow-sm border-b border-gray-100' 
+          ? 'bg-white/90 backdrop-blur-sm shadow-sm' 
           : 'bg-transparent'
       }`}
     >
@@ -43,7 +43,7 @@ const NavBar = () => {
             </Link>
           </div>
 
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-4">
             <NavLink href="/about" isScrolled={isScrolled}>About</NavLink>
             <NavLink href="/services" isScrolled={isScrolled}>Services</NavLink>
             <NavLink href="/success-stories" isScrolled={isScrolled}>Success Stories</NavLink>
@@ -52,8 +52,11 @@ const NavBar = () => {
             <NavLink href="/trust-center" isScrolled={isScrolled}>Trust Center</NavLink>
             <NavLink href="/our-blogs" isScrolled={isScrolled}>Our Blogs</NavLink>
             <NavLink href="/continuous-tv" isScrolled={isScrolled}>ContinuousTV</NavLink>
-            <Button className={`rounded-full ${isScrolled ? 'bg-primary text-white' : 'bg-white text-secondary'} hover:bg-opacity-90`}>
-              Contact Us
+            <Button 
+              className={`rounded-full ${isScrolled ? 'bg-primary text-white' : 'bg-white text-secondary'} hover:bg-opacity-90`}
+              asChild
+            >
+              <Link to="/contact">Contact Us</Link>
             </Button>
           </div>
 
@@ -69,8 +72,8 @@ const NavBar = () => {
       </div>
 
       {isOpen && (
-        <div className="md:hidden bg-white/95 backdrop-blur-sm border-b border-gray-100 animate-fade-in">
-          <div className="px-4 pt-2 pb-6 space-y-3">
+        <div className="md:hidden bg-white/95 backdrop-blur-sm shadow-lg animate-fade-in">
+          <div className="px-4 pt-2 pb-6 space-y-2">
             <MobileNavLink href="/about">About</MobileNavLink>
             <MobileNavLink href="/services">Services</MobileNavLink>
             <MobileNavLink href="/success-stories">Success Stories</MobileNavLink>
@@ -79,9 +82,11 @@ const NavBar = () => {
             <MobileNavLink href="/trust-center">Trust Center</MobileNavLink>
             <MobileNavLink href="/our-blogs">Our Blogs</MobileNavLink>
             <MobileNavLink href="/continuous-tv">ContinuousTV</MobileNavLink>
-            <Button className="w-full rounded-full bg-primary text-white mt-4">
-              Contact Us
-            </Button>
+            <div className="pt-2">
+              <Button className="w-full rounded-full bg-primary text-white">
+                Contact Us
+              </Button>
+            </div>
           </div>
         </div>
       )}
@@ -100,9 +105,9 @@ const NavLink = ({
 }) => (
   <a
     href={href}
-    className={`text-sm font-medium hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-primary after:scale-x-0 after:origin-right after:transition-transform hover:after:scale-x-100 hover:after:origin-left ${
+    className={`text-sm font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-primary after:scale-x-0 after:origin-right after:transition-transform hover:after:scale-x-100 hover:after:origin-left ${
       isScrolled ? 'text-secondary' : 'text-white'
-    }`}
+    } hover:text-primary`}
   >
     {children}
   </a>
