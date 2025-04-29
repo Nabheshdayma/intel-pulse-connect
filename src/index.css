@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
@@ -104,6 +105,15 @@
   }
 }
 
+@keyframes wave-animation {
+  0% { transform: rotate(0deg); }
+  20% { transform: rotate(20deg); }
+  40% { transform: rotate(0deg); }
+  60% { transform: rotate(-15deg); }
+  80% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+
 @layer utilities {
   .glass-card {
     @apply bg-white/80 backdrop-blur-sm border border-white/20 shadow-md;
@@ -132,6 +142,11 @@
   
   .animate-spin-slow {
     animation: spin-slow 20s linear infinite;
+  }
+  
+  .animate-wave-arm {
+    animation: wave-animation 3s ease-in-out infinite;
+    transform-origin: 70% 70%;
   }
 }
 
