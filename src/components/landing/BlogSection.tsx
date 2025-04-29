@@ -30,13 +30,14 @@ const BlogSection = () => {
   }, []);
 
   return (
-    <section id="blog" ref={sectionRef} className="py-20 bg-gradient-to-b from-background to-secondary/5">
+    <section id="blog" ref={sectionRef} className="py-20 bg-secondary/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">Latest Insights</h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Explore our latest articles on AI in GxP manufacturing, compliance strategies, and operational excellence
-          </p>
+        <div className="text-center mb-12">
+          <h2 className="text-3xl sm:text-4xl font-bold">Our Blog</h2>
+          <div className="mt-4 flex justify-center gap-4">
+            <Link to="/blog" className="text-sm font-medium text-primary hover:underline">view all</Link>
+            <Link to="/contact" className="text-sm font-medium text-primary hover:underline">get in touch</Link>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -48,20 +49,6 @@ const BlogSection = () => {
               delay={index * 100}
             />
           ))}
-        </div>
-        
-        <div className="mt-12 text-center">
-          <Button 
-            variant="outline" 
-            size="lg" 
-            className="rounded-full" 
-            asChild
-          >
-            <Link to="/blog">
-              View All Articles
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
         </div>
       </div>
     </section>
@@ -80,7 +67,7 @@ interface BlogPostProps {
 const BlogCard = ({ image, title, excerpt, date, isVisible, delay }: BlogPostProps) => {
   return (
     <Card 
-      className={`overflow-hidden transition-all duration-700 border-0 rounded-lg shadow hover:shadow-lg
+      className={`overflow-hidden transition-all duration-700 hover-scale 
         ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} 
       style={{ transitionDelay: `${delay}ms` }}
     >
@@ -88,8 +75,8 @@ const BlogCard = ({ image, title, excerpt, date, isVisible, delay }: BlogPostPro
         <img src={image} alt={title} className="w-full h-full object-cover transition-transform hover:scale-105" />
       </div>
       <CardHeader>
+        <CardTitle className="line-clamp-2">{title}</CardTitle>
         <CardDescription className="text-xs text-muted-foreground">{date}</CardDescription>
-        <CardTitle className="line-clamp-2 text-xl">{title}</CardTitle>
       </CardHeader>
       <CardContent>
         <p className="text-muted-foreground line-clamp-3">{excerpt}</p>
