@@ -1,7 +1,7 @@
 
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Waves } from "lucide-react";
+import { MoveDialogal } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -9,18 +9,17 @@ const Hero = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="flex flex-col justify-center items-center">
-            <div className="relative w-64 h-64 flex items-center justify-center">
-              <div className="w-64 h-64 flex items-center justify-center relative">
+            <div className="relative w-80 h-80 flex items-center justify-center">
+              <div className="w-full h-full flex items-center justify-center relative">
                 <img 
                   src="/lovable-uploads/ff834875-c819-46c4-a414-081c14e3897c.png" 
                   alt="Friendly Robot" 
-                  className="w-48 z-10"
+                  className="w-64 z-10 animate-float"
                 />
                 <div className="absolute -right-3 top-1/4 animate-wave-arm">
                   <div className="w-10 h-10 rounded-full bg-secondary/5"></div>
                 </div>
               </div>
-              <div className="absolute w-full h-full rounded-full border-4 border-dashed border-secondary/30 animate-spin-slow"></div>
             </div>
           </div>
           
