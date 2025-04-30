@@ -14,11 +14,11 @@ const NavBar = () => {
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
               <img 
-                src="/lovable-uploads/082497ec-3b35-40db-8587-7146fdcbb988.png" 
+                src="/lovable-uploads/b3a0eef4-b3c2-4b08-bcbf-1da21a681141.png" 
                 alt="XLM Logo" 
                 className="h-10"
               />
-              <span className="ml-2 font-bold text-xl text-secondary">xLM</span>
+              <span className="ml-2 font-bold text-xl text-blue-600">xLM</span>
             </Link>
           </div>
 
@@ -30,7 +30,7 @@ const NavBar = () => {
             <NavLink href="/events">Events</NavLink>
             <NavLink href="/trust-center">Trust Center</NavLink>
             <NavLink href="/our-blogs">Our Blogs</NavLink>
-            <Button className="bg-primary text-white hover:bg-primary/90 rounded-full">
+            <Button className="bg-blue-600 text-white hover:bg-blue-700 rounded-full">
               Contact Us
             </Button>
           </div>
@@ -58,7 +58,7 @@ const NavBar = () => {
             <MobileNavLink href="/our-blogs">Our Blogs</MobileNavLink>
             <MobileNavLink href="/continuous-tv">ContinuousTV</MobileNavLink>
             <div className="px-3 py-2">
-              <Button className="w-full bg-primary text-white hover:bg-primary/90 rounded-full">
+              <Button className="w-full bg-blue-600 text-white hover:bg-blue-700 rounded-full">
                 Contact Us
               </Button>
             </div>
@@ -72,7 +72,7 @@ const NavBar = () => {
 const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
   <a
     href={href}
-    className="text-secondary hover:text-primary transition-colors text-sm font-medium"
+    className="text-gray-800 hover:text-blue-600 transition-colors text-sm font-medium"
   >
     {children}
   </a>
@@ -81,7 +81,7 @@ const NavLink = ({ href, children }: { href: string; children: React.ReactNode }
 const MobileNavLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
   <a
     href={href}
-    className="block px-3 py-2 text-base font-medium text-secondary hover:text-primary"
+    className="block px-3 py-2 text-base font-medium text-gray-800 hover:text-blue-600"
   >
     {children}
   </a>

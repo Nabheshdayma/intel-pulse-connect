@@ -30,11 +30,11 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#00BF7D",
+          DEFAULT: "#0052CC", // Blue primary color
           foreground: "#FFFFFF",
         },
         secondary: {
-          DEFAULT: "#341F6F",
+          DEFAULT: "#003366", // Darker blue
           foreground: "#FFFFFF",
         },
         destructive: {
@@ -46,8 +46,8 @@ export default {
           foreground: "hsl(var(--muted-foreground))",
         },
         accent: {
-          DEFAULT: "#00BF7D",
-          foreground: "#FFFFFF",
+          DEFAULT: "#FFD700", // Yellow accent color
+          foreground: "#000000",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
@@ -59,10 +59,11 @@ export default {
         },
         brand: {
           purple: "#8B5CF6",
-          blue: "#3B82F6",
-          cyan: "#06B6D4",
+          blue: "#0052CC", // Updated blue
+          cyan: "#00B8D9",
           magenta: "#D946EF",
           neon: "#22D3EE",
+          yellow: "#FFD700", // Added yellow
         },
         sidebar: {
           DEFAULT: 'hsl(var(--sidebar-background))',
@@ -145,9 +146,9 @@ export default {
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "hero-pattern": "linear-gradient(to right bottom, #1A1F2C, #2D3748)",
-        "card-gradient": "linear-gradient(to bottom right, #D946EF20, #8B5CF620)",
-        "ai-grid": "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%238B5CF6' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",
+        "hero-pattern": "linear-gradient(to right bottom, #003366, #0052CC)",
+        "card-gradient": "linear-gradient(to bottom right, #FFD700, #0052CC)",
+        "ai-grid": "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230052CC' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",
       },
     },
   },
