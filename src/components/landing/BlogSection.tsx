@@ -30,10 +30,16 @@ const BlogSection = () => {
   }, []);
 
   return (
-    <section id="blog" ref={sectionRef} className="py-20 bg-secondary/50">
+    <section id="blog" ref={sectionRef} className="py-20 bg-secondary/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold">Our Blog</h2>
+        <div className="text-center mb-16">
+          <div className="inline-block mb-4">
+            <span className="bg-accent text-secondary font-bold px-6 py-2 rounded-full text-sm uppercase shadow-lg">
+              Latest Insights
+            </span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">Our Blog</h2>
+          <div className="w-24 h-1 bg-primary mx-auto mb-8 rounded-full"></div>
           <div className="mt-4 flex justify-center gap-4">
             <Link to="/blog" className="text-sm font-medium text-primary hover:underline">view all</Link>
             <Link to="/contact" className="text-sm font-medium text-primary hover:underline">get in touch</Link>
@@ -47,6 +53,7 @@ const BlogSection = () => {
               {...post}
               isVisible={isVisible}
               delay={index * 100}
+              colorIndex={index}
             />
           ))}
         </div>
@@ -62,27 +69,39 @@ interface BlogPostProps {
   date: string;
   isVisible: boolean;
   delay: number;
+  colorIndex: number;
 }
 
-const BlogCard = ({ image, title, excerpt, date, isVisible, delay }: BlogPostProps) => {
+const cardColors = [
+  "from-blue-500/20 to-accent/30 border-accent/40",
+  "from-primary/20 to-blue-400/30 border-blue-400/40",
+  "from-secondary/20 to-primary/30 border-primary/40"
+];
+
+const BlogCard = ({ image, title, excerpt, date, isVisible, delay, colorIndex }: BlogPostProps) => {
+  const cardColor = cardColors[colorIndex % cardColors.length];
+  
   return (
     <Card 
-      className={`overflow-hidden transition-all duration-700 hover-scale 
+      className={`overflow-hidden transition-all duration-700 hover-scale bg-gradient-to-br ${cardColor} shadow-lg border-2
         ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} 
       style={{ transitionDelay: `${delay}ms` }}
     >
-      <div className="aspect-video w-full overflow-hidden">
+      <div className="aspect-video w-full overflow-hidden relative">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
         <img src={image} alt={title} className="w-full h-full object-cover transition-transform hover:scale-105" />
       </div>
-      <CardHeader>
-        <CardTitle className="line-clamp-2">{title}</CardTitle>
-        <CardDescription className="text-xs text-muted-foreground">{date}</CardDescription>
+      <CardHeader className="relative">
+        <div className="absolute -top-6 left-6 bg-accent text-secondary px-4 py-1 rounded-full text-xs font-bold shadow-md">
+          {date}
+        </div>
+        <CardTitle className="line-clamp-2 mt-2 text-secondary">{title}</CardTitle>
       </CardHeader>
       <CardContent>
-        <p className="text-muted-foreground line-clamp-3">{excerpt}</p>
+        <p className="text-secondary/80 line-clamp-3">{excerpt}</p>
       </CardContent>
-      <CardFooter>
-        <Button variant="link" asChild className="pl-0 group">
+      <CardFooter className="pb-6">
+        <Button variant="link" asChild className="pl-0 group bg-white/20 hover:bg-white/30 px-4 py-1 rounded-full">
           <Link to="/blog">
             Read more
             <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
