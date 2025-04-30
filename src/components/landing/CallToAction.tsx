@@ -23,7 +23,7 @@ const CallToAction = () => {
             <Button size="lg" asChild className="bg-accent text-secondary hover:bg-yellow-500 rounded-full px-10 py-7 text-lg font-semibold shadow-lg">
               <Link to="/contact">Contact Us</Link>
             </Button>
-            <Button size="lg" asChild variant="outline" className="border-white text-white hover:bg-white/10 rounded-full px-10 py-7 text-lg font-semibold">
+            <Button size="lg" asChild variant="secondary" className="bg-white text-secondary border-2 border-accent hover:bg-gray-100 rounded-full px-10 py-7 text-lg font-semibold shadow-lg">
               <Link to="/services">Explore Services</Link>
             </Button>
           </div>
