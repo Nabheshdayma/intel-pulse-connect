@@ -4,12 +4,12 @@ import { Button } from "@/components/ui/button";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen bg-gradient-to-b from-blue-900 to-black text-white pt-16 overflow-hidden">
+    <section className="relative min-h-screen bg-gradient-to-b from-blue-700 to-black text-white pt-16 overflow-hidden">
       <div className="absolute inset-0 opacity-10">
         <img 
           src="/lovable-uploads/b3a0eef4-b3c2-4b08-bcbf-1da21a681141.png" 
           alt="Background" 
-          className="w-full h-full object-cover opacity-20"
+          className="w-full h-full object-cover opacity-100"
         />
       </div>
       <div className="absolute inset-0 bg-ai-grid opacity-30"></div>
@@ -38,7 +38,7 @@ const Hero = () => {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="border-yellow-400 text-yellow-400 hover:bg-yellow-400/10 rounded-full px-10 py-6 text-lg"
+                className="border-yellow-400 text-black hover:bg-yellow-400/10 rounded-full px-10 py-6 text-lg"
               >
                 Request a Demo
               </Button>

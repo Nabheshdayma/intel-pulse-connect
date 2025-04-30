@@ -57,10 +57,10 @@ const ConferenceCountdown = ({ isOpen, onClose }: ConferenceCountdownProps) => {
             </div>
           </div>
           <DialogTitle className="text-2xl text-center text-white">
-            GXP Summit Conference 2
+            Xtelligent Summit Conference 2
           </DialogTitle>
           <DialogDescription className="text-lg text-center text-white/80">
-            Join us on May 30th, 2025 for the industry's premier GXP event!
+            Join us on May 30th, 2025 for the industry's premier Xtelligent event!
           </DialogDescription>
         </DialogHeader>
 
@@ -89,7 +89,7 @@ const ConferenceCountdown = ({ isOpen, onClose }: ConferenceCountdownProps) => {
             <div>
               <h4 className="font-medium text-white">Event Highlights</h4>
               <p className="text-sm text-white/70 mt-1">
-                Keynotes, workshops, networking opportunities and the latest in GXP innovation
+                Keynotes, workshops, networking opportunities and the latest in xLM innovations
               </p>
             </div>
           </div>
@@ -104,7 +104,7 @@ const ConferenceCountdown = ({ isOpen, onClose }: ConferenceCountdownProps) => {
           </Button>
           <Button 
             variant="outline" 
-            className="border-white/20 text-white hover:bg-white/10 px-8 py-2 rounded-full"
+            className="border-white/20 text-black hover:bg-white/10 px-8 py-2 rounded-full"
             onClick={onClose}
           >
             Remind Me Later
