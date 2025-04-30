@@ -107,7 +107,7 @@ const ConferenceCountdown = ({ isOpen, onClose }: ConferenceCountdownProps) => {
             className="border-white/20 text-black hover:bg-white/10 px-8 py-2 rounded-full"
             onClick={onClose}
           >
-            Remind Me Later
+            Remind Me Later!
           </Button>
         </DialogFooter>
       </DialogContent>
