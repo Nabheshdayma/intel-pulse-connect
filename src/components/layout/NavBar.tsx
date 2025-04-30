@@ -8,7 +8,7 @@ const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-white z-50 border-b border-gray-100">
+    <nav className="fixed top-0 left-0 right-0 bg-white z-50 shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
@@ -18,10 +18,11 @@ const NavBar = () => {
                 alt="XLM Logo" 
                 className="h-10"
               />
+              <span className="ml-2 font-bold text-xl text-secondary">xLM</span>
             </Link>
           </div>
 
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             <NavLink href="/about">About</NavLink>
             <NavLink href="/services">Services</NavLink>
             <NavLink href="/success-stories">Success Stories</NavLink>
@@ -29,8 +30,7 @@ const NavBar = () => {
             <NavLink href="/events">Events</NavLink>
             <NavLink href="/trust-center">Trust Center</NavLink>
             <NavLink href="/our-blogs">Our Blogs</NavLink>
-            <NavLink href="/continuous-tv">ContinuousTV</NavLink>
-            <Button className="bg-primary text-white hover:bg-primary/90">
+            <Button className="bg-primary text-white hover:bg-primary/90 rounded-full">
               Contact Us
             </Button>
           </div>
@@ -47,7 +47,7 @@ const NavBar = () => {
       </div>
 
       {isOpen && (
-        <div className="md:hidden">
+        <div className="md:hidden bg-white shadow-lg">
           <div className="px-2 pt-2 pb-3 space-y-1">
             <MobileNavLink href="/about">About</MobileNavLink>
             <MobileNavLink href="/services">Services</MobileNavLink>
@@ -57,6 +57,11 @@ const NavBar = () => {
             <MobileNavLink href="/trust-center">Trust Center</MobileNavLink>
             <MobileNavLink href="/our-blogs">Our Blogs</MobileNavLink>
             <MobileNavLink href="/continuous-tv">ContinuousTV</MobileNavLink>
+            <div className="px-3 py-2">
+              <Button className="w-full bg-primary text-white hover:bg-primary/90 rounded-full">
+                Contact Us
+              </Button>
+            </div>
           </div>
         </div>
       )}
@@ -83,4 +88,3 @@ const MobileNavLink = ({ href, children }: { href: string; children: React.React
 );
 
 export default NavBar;
-

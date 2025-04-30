@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -119,6 +120,15 @@ export default {
         'pulse-slow': {
           '0%, 100%': { opacity: '1' },
           '50%': { opacity: '0.8' }
+        },
+        'float': {
+          '0%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-20px)' },
+          '100%': { transform: 'translateY(0px)' }
+        },
+        'spin-slow': {
+          from: { transform: 'rotate(0deg)' },
+          to: { transform: 'rotate(360deg)' }
         }
       },
       animation: {
@@ -129,7 +139,9 @@ export default {
         'scale-in': 'scale-in 0.2s ease-out',
         'slide-in': 'slide-in 0.3s ease-out',
         'slide-up': 'slide-up 0.5s ease-out',
-        'pulse-slow': 'pulse-slow 4s infinite ease-in-out'
+        'pulse-slow': 'pulse-slow 4s infinite ease-in-out',
+        'float': 'float 6s ease-in-out infinite',
+        'spin-slow': 'spin-slow 20s linear infinite'
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
